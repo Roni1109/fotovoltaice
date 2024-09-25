@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular de Depunere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        .step {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4CAF50;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .step.orange {
+            border-left-color: #FFA500;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .upload-section {
+            margin-top: 30px;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .upload-section h3 {
+            margin-bottom: 10px;
+        }
+        .upload-section input[type="file"] {
+            margin-bottom: 15px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .captcha-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #FFA500;
+            border-radius: 5px;
+        }
+        .captcha-image {
+            width: 100%;
+            height: 50px;
+            background-color: #eee;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            letter-spacing: 5px;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Formular de depunere pentru persoane fizice</h2>
+
+    <!-- Step 1: Email Confirmation -->
+    <div class="step">
+        <h3>Pas 1: Confirmare adresă de email depunere</h3>
+        <div class="form-group">
+            <label for="email">Adresă de email:</label>
+            <input type="email" id="email" name="email" placeholder="popescu.ion@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="confirm-email">Confirmare Adresă de email:</label>
+            <input type="email" id="confirm-email" name="confirm-email" placeholder="popescu.ion@gmail.com">
+        </div>
+    </div>
+
+    <!-- Step 2: Personal Information -->
+    <div class="step orange">
+        <h3>Pas 2: Date BI/CI</h3>
+        <div class="form-group">
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" placeholder="Popescu">
+        </div>
+        <div class="form-group">
+            <label for="prenume">Prenume:</label>
+            <input type="text" id="prenume" name="prenume" placeholder="Ion">
+        </div>
+        <div class="form-group">
+            <label for="serie">Serie Act Identitate:</label>
+            <input type="text" id="serie" name="serie" placeholder="RO">
+        </div>
+        <div class="form-group">
+            <label for="numar">Număr Act Identitate:</label>
+            <input type="text" id="numar" name="numar" placeholder="123456">
+        </div>
+        <div class="form-group">
+            <label for="valabil-de-la">Valabil de la:</label>
+            <textarea id="valabil-de-la" name="valabil-de-la" placeholder="Introduceți sau lipiți informația aici" rows="2"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="valabil-pana-la">Valabil până la:</label>
+            <textarea id="valabil-pana-la" name="valabil-pana-la" placeholder="Introduceți sau lipiți informația aici" rows="2"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="cnp">CNP:</label>
+            <input type="text" id="cnp" name="cnp">
+        </div>
+        <div class="form-group">
+            <label for="judet">Județ:</label>
+            <select id="judet" name="judet">
+                <option value="" disabled selected>Selectați județul</option>
+                <option value="Alba">Alba</option>
+                <option value="Arad">Arad</option>
+                <option value="Arges">Arges</option>
+                <option value="Bacău">Bacău</option>
+                <option value="Bihor">Bihor</option>
+                <option value="bucuresti">Bistrița-Năsăud	</option>
+                <option value="bucuresti">Botoșani	</option>
+                <option value="bucuresti">Brașov</option>
+                <option value="bucuresti">Brăila</option>
+                <option value="bucuresti">Buzău</option>
+                <option value="bucuresti">Caraș-Severin</option>
+                <option value="bucuresti">Călărași</option>
+                <option value="bucuresti">Cluj</option>
+                <option value="bucuresti">Constanța</option>
+                <option value="bucuresti">Covasna</option>
+                <option value="bucuresti">Dâmbovița	</option>
+                <option value="bucuresti">Dolj</option>
+                <option value="bucuresti">Galați</option>
+                <option value="bucuresti">Giurgiu</option>
+                <option value="bucuresti">Gorj</option>
+                <option value="bucuresti">Harghita</option>
+                <option value="bucuresti">Hunedoara</option>
+                <option value="bucuresti">Ialomița</option>
+                <option value="bucuresti">Iași</option>
+                <option value="bucuresti">Ilfov</option>
+                <option value="bucuresti">Maramureș</option>
+                <option value="bucuresti">Mehedinți</option>
+                <option value="bucuresti">Mureș</option>
+                <option value="bucuresti">Neamț</option>
+                <option value="bucuresti">Olt</option>
+                <option value="bucuresti">Prahova</option>
+                <option value="bucuresti">Satu Mare</option>
+                <option value="bucuresti">Sălaj</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="adresa">Adresă domiciliu:</label>
+            <input type="text" id="adresa" name="adresa" placeholder="Localitate, stradă, număr">
+        </div>
+        <div class="form-group">
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="07XXXXXXXX">
+        </div>
+    </div>
+
+    <!-- Step 3: Upload Documents -->
+    <div class="upload-section">
+        <h3>Pas 3: Atașare documente</h3>
+        <p>Vă rugăm să atașați următoarele documente:</p>
+        <div>
+            <label for="document1">Document 1:</label>
+            <input type="file" id="document1" name="document1">
+        </div>
+        <div>
+            <label for="document2">Document 2:</label>
+            <input type="file" id="document2" name="document2">
+        </div>
+        <div>
+            <label for="document3">Document 3:</label>
+            <input type="file" id="document3" name="document3">
+        </div>
+        <div>
+            <label for="document4">Document 4:</label>
+            <input type="file" id="document4" name="document4">
+        </div>
+    </div>
+
+    <!-- Step 4: CAPTCHA and Submit -->
+    <div class="captcha-container">
+        <h3>Pas 4: Validare și depunere</h3>
+        <div class="captcha-image" id="captcha">aCt7R</div>
+        <input type="text" id="captcha-input" placeholder="Introduceți codul">
+        <button onclick="regenerateCaptcha()">Regenerare cod</button>
+
+        <!-- Terms and Conditions -->
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Declar că sunt de acord cu participarea la Programul de instalare...</label>
+            <label><input type="checkbox"> Declar că datele de mai sus sunt exacte...</label>
+            <label><input type="checkbox"> Confirm că am înțeles și mi-am însușit în integralitate...</label>
+        </div>
+
+        <button class="submit-btn">Depune proiect</button>
+    </div>
+</div>
+
+<script>
+    // Function to regenerate the CAPTCHA code
+    function regenerateCaptcha() {
+        const captcha = document.getElementById('captcha');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let newCaptcha = '';
+        for (let i = 0; i < 6; i++) {
+            newCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        captcha.textContent = newCaptcha;
+    }
+</script>
+
+</body>
+</html>
